@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Share New Video
+  body
+    if error
+      p(style='color:red') #{error}
+    if message
+      p(style='color:green') #{message}
+    form(action='/video/new' method='POST')
+      label Title: 
+      input(type='text' name='title')
+      br
+      label YouTube URL: 
+      input(type='url' name='url')
+      br
+      button(type='submit') Add Video
